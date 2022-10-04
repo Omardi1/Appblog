@@ -1,0 +1,26 @@
+{% extends "base.html"%}
+
+{% block contenu %}
+<div class="row">
+  <div class="col-md m-auto">
+    <div class="card card-body">
+      {%if Contacts%}
+      <ul = class"list-grope list-group-flush">
+        {%for contact in Contacts%}
+        <li class"list-group-item">
+          <a href="{% url 'details' contact.id %}">
+        {{contact.nom}} {{contact.prenom}}</a
+        >
+        </li>
+        {%  endfor %}   
+      </ul>
+      {%else%}
+
+       {%endif%}
+    </div>
+  </div>
+  <p>{{Contacts}}</p>
+</div>
+{% endblock %}
+
+
